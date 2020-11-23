@@ -37,6 +37,7 @@
                 <div class="plus">
                     <?php echo get_post_meta(get_the_ID(), 'moins', true); ?>
                 </div>
+                <?php comments_template(); // Par ici les commentaires ?>
             </div>
 
         </article>

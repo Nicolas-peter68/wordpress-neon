@@ -1,13 +1,22 @@
 /*
-Theme Name: Neon
-Theme URI: localhost
+Theme Name: Theme-neon
 Author: Nicolas Peter
-Author URI: https://dysign.fr
-Description: Mon premier thème !
-Requires at least: WordPress 5.0
+Require at least: 5.0
+Tested up to: 5.4
+Require PHP: 7.0
+Description: Un thème qui brille dans le noir
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 5.0
 Version: 1.0
+Text Domain: neon
 */
 p
 {
     color: darkblue;
+}
+
+h1
+{
+    color: red;
 }

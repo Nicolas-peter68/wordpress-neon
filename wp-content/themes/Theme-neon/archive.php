@@ -37,4 +37,5 @@ if (is_category()) {
 <?php endwhile;
 endif; ?>
 <?php posts_nav_link(); ?>
+<?php the_posts_pagination(); ?>
 <?php get_footer(); ?>

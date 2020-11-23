@@ -1,5 +1,13 @@
 <?php 
-
+require get_template_directory() . '/bootstrap-navwalker.php';
+function montheme_register_assets() {
+    wp_register_style('style', get_bloginfo('stylesheet_url'),'',false, 'all');
+    wp_enqueue_style('style');
+}
+register_nav_menus( array(
+    'menu-1' => esc_html__( 'Primary', 'theme-textdomain' ),
+) );
+add_action('wp_enqueue_scripts', 'montheme_register_assets');
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
