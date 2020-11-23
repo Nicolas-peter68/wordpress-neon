@@ -1,0 +1,13 @@
+/*
+Theme Name: Neon
+Theme URI: localhost
+Author: Nicolas Peter
+Author URI: https://dysign.fr
+Description: Mon premier thème !
+Requires at least: WordPress 5.0
+Version: 1.0
+*/
+p
+{
+    color: darkblue;
+}
