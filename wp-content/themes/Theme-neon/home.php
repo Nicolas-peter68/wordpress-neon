@@ -1,32 +1,26 @@
 <?php get_header(); ?>
-<h1>Mon blog</h1>
+<h1>Le blog de la promo</h1>
 <div class="row">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <div class="col-10">
+            <div class="col-md-6">
                 <article class="post">
-                    <h2><?php the_title(); ?></h2>
-                    <?php the_post_thumbnail(); ?>
-                    <p class="post__meta">
-                        Publié le <?php the_time(get_option('date_format')); ?>
-                        par <?php the_author(); ?> • <?php comments_number(); ?>
-                    </p>
-                    <?php the_excerpt(); ?>
-                    <p>
-                        <a href="<?php the_permalink(); ?>" class="post__link">Lire la suite</a>
-                    </p>
+                    <div class="card text-white bg-dark mb-5">
+                        <h3 class="card-header"><?php the_title(); ?></h3>
+                        <div class="card-body">
+                            <h5 class="card-title">Auteur: <?php the_author(); ?></h5>
+                            <p class="card-text"><?php the_excerpt(); ?></p>
+                            <hr class="my-4">
+                            <p><?php comments_number(); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Lire la suite</a>
+                        </div>
+                    </div>
                 </article>
             </div>
             <?php //get_template_part( 'archive' ); 
             ?>
     <?php endwhile;
     endif; ?>
-    <div class="col-2">
-        <aside class="site__sidebar">
-            <ul>
-                <?php dynamic_sidebar('blog-sidebar'); ?>
-            </ul>
-        </aside>
-    </div>
+
 </div>
 <!--end row-->
 <?php get_footer(); ?>

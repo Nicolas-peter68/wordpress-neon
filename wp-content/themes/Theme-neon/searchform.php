@@ -1,5 +1,4 @@
-<form action="<?php echo home_url( '/' ); ?>" method="get">
-    <label for="search">Rechercher :</label>
-    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-    <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/images/search.png" />
+<form class="form-inline my-2 my-lg-0" action="<?= esc_url(home_url('/'))?>">
+    <input class="form-control mr-sm-2" name="s" type="search" placeholder="Chercher quelque chose" aria-label="Search" value="<?=get_search_query()?>"> 
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
 </form>

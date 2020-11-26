@@ -10,30 +10,26 @@
 
 <body <?php body_class(); ?>>
 	<header class="header">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e('Toggle Navigation', 'theme-textdomain'); ?>">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id' => 'primary-menu',
-						'depth' => 2,
-						'container' => false, // afin d'éviter d'avoir une div autour
-						'menu_class' => 'navbar-nav mr-auto', // ma classe personnalisée
-						'fallback_cb' => 'Bootstrap_NavWalker::fallback',
-					)
-				);
-				?>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Tapez quelque chose" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-				</form>
-			</div>
+			<a class="navbar-brand" href="#">Navbar</a>
+			<?php
+			wp_nav_menu(array(
+				'theme_location'    => 'main',
+				'depth'             => 2,
+				'container'         => 'div',
+				'container_class'   => 'collapse navbar-collapse',
+				'container_id'      => 'bs-example-navbar-collapse-1',
+				'menu_class'        => 'nav navbar-nav mr-auto',
+				'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+				'walker'            => new WP_Bootstrap_Navwalker(),
+			));
+			?>
+		<?= get_search_form()?>
 		</nav>
-		<a href="<?php echo home_url('/'); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.jpg" alt="Logo">
 		</a>
 

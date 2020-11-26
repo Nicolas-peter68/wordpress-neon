@@ -1,5 +1,8 @@
-<form class="newsletter-form">
-    <p>Des offres exclusives, des actus WordPress et du contenu bonus en avant-première</p>
-    <input type="email" name="email" placeholder="E-mail">
-    <input type="submit" value="Je m'abonne">
+<p>Abonnez-vous à notre newsletter pour ne rien manquer !</p>
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="Email" class="sr-only">Email</label>
+    <input type="email" class="form-control" id="inputPassword2" placeholder="Email">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">S'abonner</button>
 </form>
