@@ -8,6 +8,11 @@
                         <h3 class="card-header"><?php the_title(); ?></h3>
                         <div class="card-body">
                             <h5 class="card-title">Auteur: <?php the_author(); ?></h5>
+                            Catégorie:
+                            <ul>
+                                <?php the_category(); ?>
+                            </ul>
+                            <p>Publié le <?php the_time(get_option('date_format')); ?></p>
                             <p class="card-text"><?php the_excerpt(); ?></p>
                             <hr class="my-4">
                             <p><?php comments_number(); ?></p>
@@ -16,8 +21,6 @@
                     </div>
                 </article>
             </div>
-            <?php //get_template_part( 'archive' ); 
-            ?>
     <?php endwhile;
     endif; ?>
 

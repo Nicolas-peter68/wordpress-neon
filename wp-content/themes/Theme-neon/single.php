@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <h1><?php the_title(); ?></h1>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
         <article class="post">
             <?php the_post_thumbnail(); ?>
             <div class="post__meta">
@@ -13,7 +12,6 @@
                     Avec les étiquettes <?php the_tags(); ?>
                 </p>
             </div>
-
             <div class="post__content">
                 <?php the_content(); ?>
             </div>
@@ -21,12 +19,10 @@
                 <strong>Avis :</strong>
                 <?php echo get_post_meta(get_the_ID(), 'avis', true); ?>
             </p>
-
             <p>
                 <strong>Note :</strong>
                 <?php echo get_post_meta(get_the_ID(), 'note', true); ?> / 10
             </p>
-
             <div class="plus-moins">
                 <div class="plus">
                     <?php echo get_post_meta(get_the_ID(), 'plus', true); ?>
@@ -36,8 +32,8 @@
                 </div>
 
             </div>
-            <?php comments_template(); // Par ici les commentaires 
-            ?>
+            <?php comment_form($args); // Par ici les commentaires?> 
+            
         </article>
 <?php endwhile;
 endif; ?>

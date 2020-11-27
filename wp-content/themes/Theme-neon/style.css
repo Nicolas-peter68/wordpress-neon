@@ -11,20 +11,41 @@ Requires at least: 5.0
 Version: 1.0
 Text Domain: neon
 */
+@font-face
+{
+    font-family: ninuto-regular;
+    src: url(fonts/Nunito-Regular.ttf);
+}
+@font-face
+{
+    font-family: roboto;
+    src: url(fonts/Roboto-Light.ttf);
+}
 body
 {
     background-image: url(img/background.jpg);
     background-size: cover;
+    background-color: black !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+}
+.cover
+{
     height: 100vh;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 p,h2,h3,h4,h5,h6,ul
 {
     color: white !important;
 }
 
+p
+{
+    font-family: roboto, fantasy;
+}
 h1
 {
     color: #f05454;
@@ -40,3 +61,4 @@ hr
 {
     border-top: white;
 }
+
